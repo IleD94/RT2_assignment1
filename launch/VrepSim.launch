@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+   <node name="goToPoint" pkg="rt2_assignment1" type ="go_to_point.py" />
+   
+   <node name="positionServer"  pkg="rt2_assignment1" type="position_service" />
+   
+   <node name="stateMachine" pkg="rt2_assignment1" type="state_machine" output="screen"/>
+   
+   <node name="userInterface" pkg="rt2_assignment1" type="user_interface.py" output="screen"/>
+   
+
+</launch>

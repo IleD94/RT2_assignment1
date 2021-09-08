@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  <node pkg="tf2_web_republisher" type="tf2_web_republisher" name="tf2_web_republisher" />
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="model" default="$(find rt2_assignment1)/urdf/my_robot.urdf" />
+
+  <!-- We resume the logic in empty_world.launch -->
+   <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+    <arg name="paused" value="false"/>
+  </include>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" textfile="$(find rt2_assignment1)/urdf/my_robot.urdf"/>
+	 
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model robot1 -param robot_description -z 0.05"/> 
+	
+   <node name="goToPoint" pkg="rt2_assignment1" type ="go_to_point.py" />
+   
+   <node name="positionServer"  pkg="rt2_assignment1" type="position_service" />
+   
+   <node name="stateMachine" pkg="rt2_assignment1" type="state_machine" output="screen"/>
+   
+   <node name="userInterface" pkg="rt2_assignment1" type="user_interface.py" output="screen"/>
+   
+
+</launch>
