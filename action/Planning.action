@@ -1,0 +1,6 @@
+geometry_msgs/PoseStamped target_pose
+---
+bool result
+---
+geometry_msgs/Pose actual_pose
+string stat
