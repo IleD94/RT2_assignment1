@@ -1,0 +1,164 @@
+\hypertarget{state__machine_8cpp}{}\doxysection{src/state\+\_\+machine.cpp File Reference}
+\label{state__machine_8cpp}\index{src/state\_machine.cpp@{src/state\_machine.cpp}}
+
+
+This files implements a state machine in order to command a robot that moves to reach random goal.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Random\+Position.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$rt2\+\_\+assignment1/\+Planning\+Action.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+Include dependency graph for state\+\_\+machine.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state__machine_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}{user\+\_\+interface}} (rt2\+\_\+assignment1\+::\+Command\+::\+Request \&req, rt2\+\_\+assignment1\+::\+Command\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em This function is the callback function of the service server /user\+\_\+interface. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}{start}} = false
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_a53a2d16dac430353052f49aaa0cce34a}{stop}} = false
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_ad6bb479b124dc40837804becd50c6f2f}{On\+My\+Way}} = true
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_a5734a27c6f335279bf9b0b57ae9b8f76}{result}} = false
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_adb37aa60acff170624aa221f7ec1382e}{First\+Round}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This files implements a state machine in order to command a robot that moves to reach random goal. 
+
+\begin{DoxyAuthor}{Author}
+Ilenia D\textquotesingle{}Angelo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/09/2021
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ ° None
+
+Publishes to\+: ~\newline
+ ° /cmd\+\_\+vel
+
+Services \+: ~\newline
+ ° /position\+\_\+server ° /user\+\_\+interface ° /position\+\_\+server Actions \+: ~\newline
+ ° /reaching\+\_\+goal
+
+Description \+:
+
+Using a user interface, the robot can be activated by the user, who can choose between 1 (to start the robot) and 0 (to stop the robot). This change the value of some boolean variables, which allow the access to two different part of the code\+: -\/with \textquotesingle{}start\textquotesingle{} the program \+:sends a request to the /position\+\_\+server, sets the action goal /reaching\+\_\+goal with /position\+\_\+server\textquotesingle{}s response and waits the achievement of the goal -\/with \textquotesingle{}stop\textquotesingle{} the program\+: cancels the action goal, sets to zero the linear and angular velocities in twist\+\_\+msg and publishes them in the topic /cmd\+\_\+vel 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!main@{main}}
+\index{main@{main}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+The main function. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & This function implements\+:
+\begin{DoxyEnumerate}
+\item the state\+\_\+machine node
+\item the service server /user\+\_\+interface
+\item the service client /position\+\_\+server
+\item the action client /reaching\+\_\+goal
+\item the publisher for /cmd\+\_\+vel
+\item the two custom messages Random\+Position and Planning\+Action If start value is set as true it sends a request to the /position\+\_\+server and uses the response as a goal for the /reaching\+\_\+goal action, then it waits for the result If stop value is set as true it cancels the goal of the /reaching\+\_\+goal action, fills the field of the Twist\+\_\+msg, needed to control this kind of robot, with 0 and publishes in /cmd\+\_\+vel 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyRetVals}
+$<$ if the robot is not still on its way to reach the goal ~\newline
+
+
+$<$ the robot is moving to reach the goal
+
+$<$ we need to explicitly transform in bool Result-\/$>$result in order to avoid bugs
+
+$<$ the robot has reached the goal ~\newline
+
+
+$<$ double condion in order to avoid useless loops of cancelling goals and publishing in cmd\+\_\+vel ~\newline
+
+
+$<$ the robot is not moving to reach a goal ~\newline
+\mbox{\Hypertarget{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}\label{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!user\_interface@{user\_interface}}
+\index{user\_interface@{user\_interface}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{user\_interface()}{user\_interface()}}
+{\footnotesize\ttfamily bool user\+\_\+interface (\begin{DoxyParamCaption}\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Request \&}]{req,  }\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+This function is the callback function of the service server /user\+\_\+interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & the request received from the client of the \mbox{\hyperlink{user__interface_8py}{user\+\_\+interface.\+py}}. \\
+\hline
+{\em res} & it does not use any response\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em the} & true boolen value\\
+\hline
+\end{DoxyRetVals}
+This function allows to initialize the global variables $\ast$\char`\"{}start\char`\"{}$\ast$ to true and $\ast$\char`\"{}\+On\+My\+Way\char`\"{}$\ast$ to false wether the command received consists in a \char`\"{}start\char`\"{} string. Otherwise, it initializes $\ast$\char`\"{}start\char`\"{}$\ast$ to false and the global variable $\ast$\char`\"{}stop\char`\"{}$\ast$ to true 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{state__machine_8cpp_adb37aa60acff170624aa221f7ec1382e}\label{state__machine_8cpp_adb37aa60acff170624aa221f7ec1382e}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!FirstRound@{FirstRound}}
+\index{FirstRound@{FirstRound}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{FirstRound}{FirstRound}}
+{\footnotesize\ttfamily bool First\+Round = true}
+
+used to avoid useless loops of publishing in cmd\+\_\+vel when the robot is stopped ~\newline
+ \mbox{\Hypertarget{state__machine_8cpp_ad6bb479b124dc40837804becd50c6f2f}\label{state__machine_8cpp_ad6bb479b124dc40837804becd50c6f2f}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!OnMyWay@{OnMyWay}}
+\index{OnMyWay@{OnMyWay}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{OnMyWay}{OnMyWay}}
+{\footnotesize\ttfamily bool On\+My\+Way = true}
+
+used as condition to control if the robot is moving or not \mbox{\Hypertarget{state__machine_8cpp_a5734a27c6f335279bf9b0b57ae9b8f76}\label{state__machine_8cpp_a5734a27c6f335279bf9b0b57ae9b8f76}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!result@{result}}
+\index{result@{result}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily bool result = false}
+
+the outcome of the action \mbox{\Hypertarget{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}\label{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!start@{start}}
+\index{start@{start}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily bool start = false}
+
+used as condition to start the robot \mbox{\Hypertarget{state__machine_8cpp_a53a2d16dac430353052f49aaa0cce34a}\label{state__machine_8cpp_a53a2d16dac430353052f49aaa0cce34a}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!stop@{stop}}
+\index{stop@{stop}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily bool stop = false}
+
+used as condition to stop the robot 

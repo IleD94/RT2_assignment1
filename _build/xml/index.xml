@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+    <member refid="namespaceconf_1a332f430461432dc465213f884a1e4967" kind="variable"><name>shell</name></member>
+    <member refid="namespaceconf_1a45653c983098153b78e33600e39230eb" kind="variable"><name>project</name></member>
+    <member refid="namespaceconf_1a33fa97cf51dcb25970fbf53f10159589" kind="variable"><name>copyright</name></member>
+    <member refid="namespaceconf_1a637c239d256432248aa8d9f3ab0b8c52" kind="variable"><name>author</name></member>
+    <member refid="namespaceconf_1a325dc746d8bf05c54d26351c35a21d90" kind="variable"><name>release</name></member>
+    <member refid="namespaceconf_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
+    <member refid="namespaceconf_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
+    <member refid="namespaceconf_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="namespaceconf_1a3117edf4443d9b8c70a9f0f44294ba79" kind="variable"><name>highlight_language</name></member>
+    <member refid="namespaceconf_1a10af2a769eb3bd3322e874f677e435b1" kind="variable"><name>source_suffix</name></member>
+    <member refid="namespaceconf_1a6fcd7e5236f355b1e1a55f9d95988810" kind="variable"><name>master_doc</name></member>
+    <member refid="namespaceconf_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" kind="variable"><name>html_theme</name></member>
+    <member refid="namespaceconf_1af4fb5d8851ccaade135c2668dd3ced41" kind="variable"><name>html_static_path</name></member>
+    <member refid="namespaceconf_1a8375f4f963de3ac8026eaa9beced9564" kind="variable"><name>intersphinx_mapping</name></member>
+    <member refid="namespaceconf_1a8fe7f0d85f975f4ecba5cb6066959a09" kind="variable"><name>todo_include_todos</name></member>
+    <member refid="namespaceconf_1acb47d2c0c2904fa7d36b63142533f383" kind="variable"><name>breathe_projects</name></member>
+    <member refid="namespaceconf_1a6eba2d2c7ae923054b1c49e686ec89b9" kind="variable"><name>breathe_default_project</name></member>
+    <member refid="namespaceconf_1a54585428ce84441199d9dfd7087e2243" kind="variable"><name>breathe_default_members</name></member>
+  </compound>
+  <compound refid="namespacego__to__point__action" kind="namespace"><name>go_to_point_action</name>
+    <member refid="namespacego__to__point__action_1a4aafc5721803ca4d208e9e0a686f8e65" kind="variable"><name>position_</name></member>
+    <member refid="namespacego__to__point__action_1ac843a0e43a672ed873017530721ce2d9" kind="variable"><name>pose_</name></member>
+    <member refid="namespacego__to__point__action_1a7e81c61a8a01745a08f175577455bcb4" kind="variable"><name>yaw_</name></member>
+    <member refid="namespacego__to__point__action_1a513d83133bce80caeaf1f02289d6c12b" kind="variable"><name>state_</name></member>
+    <member refid="namespacego__to__point__action_1a57e8782cf693baab2ca4390e2e917155" kind="variable"><name>desired_position_</name></member>
+    <member refid="namespacego__to__point__action_1a8848541ff0d9e1607e1d715de007aa03" kind="variable"><name>z</name></member>
+    <member refid="namespacego__to__point__action_1a99d0c1c8c5e359fcd5f1901e25a86a2d" kind="variable"><name>yaw_precision_</name></member>
+    <member refid="namespacego__to__point__action_1aeaede468f4753c2c476474b35b81754c" kind="variable"><name>yaw_precision_2_</name></member>
+    <member refid="namespacego__to__point__action_1a01a3cd0c013f3c1712758e04b4bc91f4" kind="variable"><name>dist_precision_</name></member>
+    <member refid="namespacego__to__point__action_1a67a9de26fa4f88312f9cc4a8ecedb369" kind="variable"><name>kp_a</name></member>
+    <member refid="namespacego__to__point__action_1acd565e807f177f678d6a12d504d01e60" kind="variable"><name>kp_d</name></member>
+    <member refid="namespacego__to__point__action_1a9cb07d74a9d8087eb04da488c77c118c" kind="variable"><name>ub_a</name></member>
+    <member refid="namespacego__to__point__action_1a156fcdad5d5c28042b46d45d323a9fac" kind="variable"><name>lb_a</name></member>
+    <member refid="namespacego__to__point__action_1a05a9d1a5cc9bd5e985d6ad5247ac985d" kind="variable"><name>ub_d</name></member>
+    <member refid="namespacego__to__point__action_1a3e555da71db618b9165bb58fe9ef160e" kind="variable"><name>pub</name></member>
+    <member refid="namespacego__to__point__action_1a3994b1577d1a499ce8c7352036ee6486" kind="variable"><name>act_s</name></member>
+    <member refid="namespacego__to__point__action_1affe1389e38557b69ee71adea85b846b2" kind="function"><name>clbk_odom</name></member>
+    <member refid="namespacego__to__point__action_1ab7ad2629ed9ffbd5d9b7ca9c540d932a" kind="function"><name>change_state</name></member>
+    <member refid="namespacego__to__point__action_1a0bca87c6d45ca63d3152a4e8def72e2a" kind="function"><name>normalize_angle</name></member>
+    <member refid="namespacego__to__point__action_1a18e7fef09d30f59bb91061f4b91f87e6" kind="function"><name>fix_yaw</name></member>
+    <member refid="namespacego__to__point__action_1a7c35034eab524fbff7d05d80fd65ede4" kind="function"><name>go_straight_ahead</name></member>
+    <member refid="namespacego__to__point__action_1a9fec1cd57aebd720828b5bab962048db" kind="function"><name>done</name></member>
+    <member refid="namespacego__to__point__action_1ab3bc8cf3239eaa0def69f3a87a98976c" kind="function"><name>planning</name></member>
+    <member refid="namespacego__to__point__action_1a33cfc08b34e07f53ddda67d2ab551ba1" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespaceuser__interface" kind="namespace"><name>user_interface</name>
+    <member refid="namespaceuser__interface_1ac26bdb296b6776907b72c17ce5a1b24a" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="go__to__point__action_8py" kind="file"><name>go_to_point_action.py</name>
+  </compound>
+  <compound refid="user__interface_8py" kind="file"><name>user_interface.py</name>
+  </compound>
+  <compound refid="position__service_8cpp" kind="file"><name>position_service.cpp</name>
+    <member refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kind="function"><name>randMToN</name></member>
+    <member refid="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4" kind="function"><name>myrandom</name></member>
+    <member refid="position__service_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="state__machine_8cpp" kind="file"><name>state_machine.cpp</name>
+    <member refid="state__machine_8cpp_1ab376b87f96a574a793c03c53e75afec8" kind="variable"><name>start</name></member>
+    <member refid="state__machine_8cpp_1a53a2d16dac430353052f49aaa0cce34a" kind="variable"><name>stop</name></member>
+    <member refid="state__machine_8cpp_1ad6bb479b124dc40837804becd50c6f2f" kind="variable"><name>OnMyWay</name></member>
+    <member refid="state__machine_8cpp_1a5734a27c6f335279bf9b0b57ae9b8f76" kind="variable"><name>result</name></member>
+    <member refid="state__machine_8cpp_1adb37aa60acff170624aa221f7ec1382e" kind="variable"><name>FirstRound</name></member>
+    <member refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kind="function"><name>user_interface</name></member>
+    <member refid="state__machine_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_53e6fa9553ac22a5646d2a2b2d7b97a1" kind="dir"><name>scripts</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

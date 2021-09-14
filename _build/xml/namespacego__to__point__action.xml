@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacego__to__point__action" kind="namespace" language="Python">
+    <compoundname>go_to_point_action</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacego__to__point__action_1a4aafc5721803ca4d208e9e0a686f8e65" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.position_</definition>
+        <argsstring></argsstring>
+        <name>position_</name>
+        <initializer>=  Point()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="38" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1ac843a0e43a672ed873017530721ce2d9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.pose_</definition>
+        <argsstring></argsstring>
+        <name>pose_</name>
+        <initializer>=  Pose()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="41" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a7e81c61a8a01745a08f175577455bcb4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_action.yaw_</definition>
+        <argsstring></argsstring>
+        <name>yaw_</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="44" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a513d83133bce80caeaf1f02289d6c12b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_action.state_</definition>
+        <argsstring></argsstring>
+        <name>state_</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="48" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a57e8782cf693baab2ca4390e2e917155" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.desired_position_</definition>
+        <argsstring></argsstring>
+        <name>desired_position_</name>
+        <initializer>=  Point()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="50" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a8848541ff0d9e1607e1d715de007aa03" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="51" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a99d0c1c8c5e359fcd5f1901e25a86a2d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_action.yaw_precision_</definition>
+        <argsstring></argsstring>
+        <name>yaw_precision_</name>
+        <initializer>=  math.pi / 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="53" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1aeaede468f4753c2c476474b35b81754c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_action.yaw_precision_2_</definition>
+        <argsstring></argsstring>
+        <name>yaw_precision_2_</name>
+        <initializer>=  math.pi / 90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="54" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a01a3cd0c013f3c1712758e04b4bc91f4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.dist_precision_</definition>
+        <argsstring></argsstring>
+        <name>dist_precision_</name>
+        <initializer>=  0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="55" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a67a9de26fa4f88312f9cc4a8ecedb369" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.kp_a</definition>
+        <argsstring></argsstring>
+        <name>kp_a</name>
+        <initializer>=  -3.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="56" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1acd565e807f177f678d6a12d504d01e60" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.kp_d</definition>
+        <argsstring></argsstring>
+        <name>kp_d</name>
+        <initializer>=  0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="57" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a9cb07d74a9d8087eb04da488c77c118c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.ub_a</definition>
+        <argsstring></argsstring>
+        <name>ub_a</name>
+        <initializer>=  0.6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="58" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a156fcdad5d5c28042b46d45d323a9fac" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.lb_a</definition>
+        <argsstring></argsstring>
+        <name>lb_a</name>
+        <initializer>=  -0.5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="59" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a05a9d1a5cc9bd5e985d6ad5247ac985d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_action.ub_d</definition>
+        <argsstring></argsstring>
+        <name>ub_d</name>
+        <initializer>=  0.6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="60" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a3e555da71db618b9165bb58fe9ef160e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.pub</definition>
+        <argsstring></argsstring>
+        <name>pub</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="65" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacego__to__point__action_1a3994b1577d1a499ce8c7352036ee6486" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_action.act_s</definition>
+        <argsstring></argsstring>
+        <name>act_s</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="68" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacego__to__point__action_1affe1389e38557b69ee71adea85b846b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.clbk_odom</definition>
+        <argsstring>(msg)</argsstring>
+        <name>clbk_odom</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the callback:
+
+This function retrieves the current robot position for saving
+it within the *position_* global variable and is responsible for
+transforming the orientation from quaternion angles to Euler ones
+
+Args:
+  msg(Odometry): data retrieved by */odom* topic
+
+Returns:
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="73" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="73" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1ab7ad2629ed9ffbd5d9b7ca9c540d932a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.change_state</definition>
+        <argsstring>(state)</argsstring>
+        <name>change_state</name>
+        <param>
+          <type>state</type>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the change_state function:
+
+This function change the value of the global variable (*state_*) and print out the change of the state 
+
+Args:
+  state(int): the state of the robot
+
+Returns:
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="106" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="106" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1a0bca87c6d45ca63d3152a4e8def72e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.normalize_angle</definition>
+        <argsstring>(angle)</argsstring>
+        <name>normalize_angle</name>
+        <param>
+          <type>angle</type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the normalize_angle function:
+
+This function normalize the value of the variable angle between -pi and pi
+Args:
+  angle(float): The angle not normalized
+
+Returns:
+  angle(float): The angle normalized</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="124" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="124" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1a18e7fef09d30f59bb91061f4b91f87e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.fix_yaw</definition>
+        <argsstring>(des_pos)</argsstring>
+        <name>fix_yaw</name>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the fix_yaw function:
+
+This function fix the orientation of the robot using x,y
+coordinates and sets the angular velocity in order to put 
+the robot in the same direction of the goal
+       
+Args:
+  des_pos(Point):  the expected x and y coordinates
+
+Returns:
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="141" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="141" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1a7c35034eab524fbff7d05d80fd65ede4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.go_straight_ahead</definition>
+        <argsstring>(des_pos)</argsstring>
+        <name>go_straight_ahead</name>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the go_straight_ahead function:
+
+This function computes the robot trajectory error in the orientation and
+in the position in order to set, using a threshold, the most suitable angular velocity and 
+the linear velocity, which is already set.
+       
+Args:
+  des_pos(Point): the expected x and y coordinates
+Returns:
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="177" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="177" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1a9fec1cd57aebd720828b5bab962048db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.done</definition>
+        <argsstring>()</argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of done function:
+        
+This function set the linear and angular velocities as 0
+
+Args :
+  None
+
+Returns :
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="217" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="217" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1ab3bc8cf3239eaa0def69f3a87a98976c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.planning</definition>
+        <argsstring>(goal)</argsstring>
+        <name>planning</name>
+        <param>
+          <type>goal</type>
+          <defname>goal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of planning function:
+        
+This function store as desired position (in coordinates x and y) the goal set by the client and control if the goal is preempted and
+fill feedback of the action and call the suitable function, based on the value of the variable (*state_*). If it succeded it set the result to true.
+
+Args :
+  goal (Float) = robot position goal 
+
+
+Returns :
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="236" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="236" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point__action_1a33cfc08b34e07f53ddda67d2ab551ba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_action.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Description of the main function:
+       
+It initializes the node &apos;go_to_point&apos;, publishes into &apos;/cmd_vel&apos;, and subscribes to &apos;/odom&apos; and
+it initializes the action server /reaching_goal 
+       
+Args :
+  None
+
+Returns :
+  None</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_action.py" line="296" column="1" bodyfile="scripts/go_to_point_action.py" bodystart="296" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: go_to_point_action
+    :platform: Unix
+    :synopsis: Python module for piloting the robot to the target
+
+.. moduleauthor:: Ilenia D&apos;Angelo
+
+ROS node for driving a robot to a specific point within a simulated
+environment, given a certain orientation corresponding to direction of the goal.
+
+Subscribes to:
+/odom topic to know the robot&apos;s position from the simulator
+
+Publishes to:
+/cmd_vel the desired robot velocities
+
+Service :
+/go_to_point to start the robot motion.
+
+Action :
+/reaching_goal to know the position of the goal, if the goal is preempted and the feedback of the action
+</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/go_to_point_action.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
