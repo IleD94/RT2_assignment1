@@ -1,4 +1,4 @@
-# First Assignment of the Research Track 2 course (Robotics Engineering / JEMARO, Unige)
+# First Assignment of the Research Track 2 course-ROS2 branch 
 
 The package contains the nodes for controlling a mobile robot in the Gazebo simulation environment. The robot is controlled from both ROS and ROS2, using the ros2_bridge that allows the exchange of data between nodes of different workspaces.
 
