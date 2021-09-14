@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="position__service_8cpp" kind="file" language="C++">
+    <compoundname>position_service.cpp</compoundname>
+    <includes local="yes">ros/ros.h</includes>
+    <includes local="yes">rt2_assignment1/RandomPosition.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/position_service.cpp</label>
+        <link refid="position__service_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>rt2_assignment1/RandomPosition.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double randMToN</definition>
+        <argsstring>(double M, double N)</argsstring>
+        <name>randMToN</name>
+        <param>
+          <type>double</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>defines the minimum value of the range for generating a random number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the maximum value of the range from which it generates a random number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>random value for the callback myrandom. It is a double</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function generates a random number into an interval (M,N) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/position_service.cpp" line="40" column="8" bodyfile="src/position_service.cpp" bodystart="40" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool myrandom</definition>
+        <argsstring>(rt2_assignment1::RandomPosition::Request &amp;req, rt2_assignment1::RandomPosition::Response &amp;res)</argsstring>
+        <name>myrandom</name>
+        <param>
+          <type>rt2_assignment1::RandomPosition::Request &amp;</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>rt2_assignment1::RandomPosition::Response &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>myrandom is the callback function of the server service /position_server </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>req</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the request received from the client. It gets a min and a max of values for x and y </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the response returned to the client. It is a random position expressed in its coordinates (x,y,theta)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean True</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function calls inside the randMToN function, which returns a pseudo-random double in the range between 0 and RAND_MAX. Everytime a request is received this callback is executed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/position_service.cpp" line="55" column="6" bodyfile="src/position_service.cpp" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="position__service_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>main function </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This function initializes the service server /position_server, the ros node (random_position_server) and waits for a request from the service client </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/position_service.cpp" line="71" column="5" bodyfile="src/position_service.cpp" bodystart="71" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This files is a service server used to set a random value, between a min M ad a max N, for each of field the random position response. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ilenia D&apos;Angelo </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>10/09/2021</para>
+</simplesect>
+Subscribes to: <linebreak/>
+ ° None</para>
+<para>Publishes to: <linebreak/>
+ ° None</para>
+<para>Services : <linebreak/>
+ ° /position_server</para>
+<para>Description :</para>
+<para>This node takes as request two double value M (as min) and N (as max) to produce a random value to fill the response fields x,y (and theta that has a costante range between (-3.14,3.14)). In this way it generates a random position into a specific range </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#include<sp/>&quot;ros/ros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rt2_assignment1/RandomPosition.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kindref="member">randMToN</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>M,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>N)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M<sp/>+<sp/>(rand()<sp/>/<sp/>(<sp/>RAND_MAX<sp/>/<sp/>(N-M)<sp/>)<sp/>)<sp/>;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4" kindref="member">myrandom</ref><sp/>(rt2_assignment1::RandomPosition::Request<sp/>&amp;req,<sp/>rt2_assignment1::RandomPosition::Response<sp/>&amp;res){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>res.x<sp/>=<sp/><ref refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kindref="member">randMToN</ref>(req.x_min,<sp/>req.x_max);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>res.y<sp/>=<sp/><ref refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kindref="member">randMToN</ref>(req.y_min,<sp/>req.y_max);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>res.theta<sp/>=<sp/><ref refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kindref="member">randMToN</ref>(-3.14,<sp/>3.14);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="position__service_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;random_position_server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/>ros::NodeHandle<sp/>n;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/>ros::ServiceServer<sp/>service=<sp/>n.advertiseService(</highlight><highlight class="stringliteral">&quot;/position_server&quot;</highlight><highlight class="normal">,<sp/><ref refid="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4" kindref="member">myrandom</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/position_service.cpp"/>
+  </compounddef>
+</doxygen>
