@@ -135,8 +135,6 @@ def planning(goal):
 
     state_ = 0
     rate = rospy.Rate(20)
-    #sucess = False
-    #result = False
     feedback = rt2_assignment1.msg.PlanningFeedback()
     result = rt2_assignment1.msg.PlanningResult()
     
@@ -145,7 +143,6 @@ def planning(goal):
             rospy.loginfo('Goal was preempted')
             act_s.set_preempted()
             success = False
-            #result = False
             break
         elif state_ == 0:
             feedback.stat = "Fixing the yaw"

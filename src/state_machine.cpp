@@ -1,6 +1,5 @@
 #include "ros/ros.h"
 #include "rt2_assignment1/Command.h"
-
 #include "rt2_assignment1/RandomPosition.h"
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
@@ -66,9 +65,7 @@ int main(int argc, char **argv)
    		result = (bool) Result->result;
    		  if (result) {
    		    OnMyWay = false;
-   		    if (not OnMyWay) {
-   		    ROS_INFO ("STO QUA");
-   		    }
+   		    ROS_INFO ("Hooray, goal reached!");
    		  }
    		}
     }
