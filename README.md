@@ -10,17 +10,17 @@ In this branch are present just the nodes that works in ROS2: **random_position_
 
 Please follow this step below to run the code both in ros and ros2:
 
-1. Open a terminal and source ros
+1. Open a terminal and **source ros**
 2. In that terminal type this command
 ```
 roslaunch rt2_assignment1 sim.launch
 ```
-3. Open one more terminal and sorce ros12 (the bridge)
+3. Open one more terminal and **source ros12** (the bridge)
 4. In that terminal type this command:
 ```
 ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
 ```
-5. Open one more terminal and source ros2
+5. Open one more terminal and **source ros2**
 6. In this last one terminal type the command:
 ```
 ros2 run rt2_assignment1 Sim_launch.py
