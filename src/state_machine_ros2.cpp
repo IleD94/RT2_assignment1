@@ -10,33 +10,30 @@
 #include "rclcpp_components/register_node_macro.hpp"
 
 
-using std::placeholders::_1; // they will be replaced by the actual message during the run
+using std::placeholders::_1;
 using std::placeholders::_2;
 using std::placeholders::_3;
 
 namespace rt2_assignment1{
 
 /*! StateMachine Class:
-* The StateMachine Node is implemented as a class so that it can
-* be structured as a component. It will be interfaced with the ROS node
-* by means of the ros1_bridge package
+* The StateMachine Node is implemented as a class, in this way it can be used as a component. 
+*Using ros1_bridge this node can exchange data with ROS nodes
 */
 class StateMachine : public rclcpp::Node
 {
 public:
 /** Initialisation of the  state_machine service and clients. 
-	* Inside the Class constructor, there exists a /user_interface service server.
-	* By means of the bind function, the callback is executed as soon as
-	* the client makes a request. Then the FSM starts working. 
-	* The two clients request respectively the /go_to_point service and the 
-	* position server service.
+	* /user_interface is the service server.
+	* /go_to_point is a server service and 
+	* position is server service too.
 	*/
   StateMachine(const rclcpp::NodeOptions & options)
   : Node("state_machine", options)
   {
     service_ = this->create_service<rt2_assignment1::srv::Command>(
-      "/user_interface", std::bind(&StateMachine::handle_service, this, _1, _2, _3)); /**< server of type Command*/
-    client_1 = this->create_client<rt2_assignment1::srv::Position>("/go_to_point"); /**< client_1 of type position  */
+      "/user_interface", std::bind(&StateMachine::handle_service, this, _1, _2, _3)); 
+    client_1 = this->create_client<rt2_assignment1::srv::Position>("/go_to_point");
     while (!client_1->wait_for_service(std::chrono::seconds(1))){
      if (!rclcpp::ok()) {
       RCLCPP_ERROR(this->get_logger(), "client_1 interrupted while waiting for service to appear.");
@@ -44,7 +41,7 @@ public:
     }
     
     }
-    client_2 = this->create_client<rt2_assignment1::srv::RandomPosition>("/position_server"); /**< client_2 of type RandomPosition */
+    client_2 = this->create_client<rt2_assignment1::srv::RandomPosition>("/position_server");
     while (!client_2->wait_for_service(std::chrono::seconds(1))){
      if (!rclcpp::ok()) {
       RCLCPP_ERROR(this->get_logger(), "client_2 interrupted while waiting for service to appear.");
@@ -61,12 +58,9 @@ private:
   bool  start = false;
  
  /**
- * Documentation for the state_machine function.
- *
- * It requires a random position. Then it initialises the request 
- * of type position with these random values. By means of them,
- * it allows the robot to reach the expected Pose 
- * 
+ * state_machine function:
+ * After receiving a random position the state_machine set the goal to reach 
+ * and allows the robot to reach the expected Position
  */
   void state_machine(){
 
@@ -101,11 +95,10 @@ private:
  
  /**Handle_service function to handle the actual service logic
  *
- * It takes as service request a string which is "start" if 
- * the user aims at activating the robot's behaviour. If so,
+ * We use as service request a string start.
+ * If the command is start the robot is activated and the 
  * state_mach() function is called.
  * 
- *
  * @param request_header
  * @param request it retrieves a string
  * @param response it defines a boolean
@@ -127,7 +120,7 @@ private:
     this->state_machine();
    }
   
-  //variables declaration
+  //Declaration of variables
   rclcpp::Service<rt2_assignment1::srv::Command>::SharedPtr service_;
   rclcpp::Client<rt2_assignment1::srv::Position>::SharedPtr client_1;
   rclcpp::Client<rt2_assignment1::srv::RandomPosition>::SharedPtr client_2; 
