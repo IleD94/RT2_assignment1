@@ -15,7 +15,7 @@ bool result
 geometry_msgs/Pose actual_pose
 string stat
 ```
-The first field corresponds to the goal, the second is the result and the last on is the feedback.
+The first field corresponds to the goal, the second is the result and the last one is the feedback.
 
 # How to run the package?
 
