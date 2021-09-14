@@ -1,4 +1,26 @@
 #! /usr/bin/env python
+"""
+.. module:: go_to_point_action
+    :platform: Unix
+    :synopsis: Python module for piloting the robot to the target
+
+.. moduleauthor:: Ilenia D'Angelo
+
+ROS node for driving a robot to a specific point within a simulated
+environment, given a certain orientation corresponding to direction of the goal.
+
+Subscribes to:
+/odom topic to know the robot's position from the simulator
+
+Publishes to:
+/cmd_vel the desired robot velocities
+
+Service :
+/go_to_point to start the robot motion.
+
+Action :
+/reaching_goal to know the position of the goal, if the goal is preempted and the feedback of the action
+"""
 # import ros stuff
 import rospy
 #from sensor_msgs.msg import LaserScan
@@ -39,6 +61,20 @@ act_s = None
 
 
 def clbk_odom(msg):
+'''
+    Description of the callback:
+
+    This function retrieves the current robot position for saving
+    it within the *position_* global variable and is responsible for
+    transforming the orientation from quaternion angles to Euler ones
+
+    Args:
+      msg(Odometry): data retrieved by */odom* topic
+
+    Returns:
+      None
+
+    '''
     global position_
     global pose_
     global yaw_
@@ -58,18 +94,55 @@ def clbk_odom(msg):
 
 
 def change_state(state):
+        '''
+        Description of the change_state function:
+
+        This function change the value of the global variable state_ and print out the change of the state 
+
+        Args:
+          state(int): the state of the robot
+
+        Returns:
+          None
+
+        '''
     global state_
     state_ = state
     print ('State changed to [%s]' % state_)
 
 
 def normalize_angle(angle):
+        '''
+        Description of the normalize_angle function:
+
+        This function normalize the value of the variable angle between -pi and pi
+        Args:
+          angle(float): The angle not normalized
+
+        Returns:
+          angle(float): The angle normalized
+
+        '''
     if(math.fabs(angle) > math.pi):
         angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
     return angle
 
 
 def fix_yaw(des_pos):
+        '''
+        Description of the fix_yaw function:
+
+		This function fix the orientation of the robot using x,y
+		coordinates and sets the angular velocity in order to put 
+		the robot in the same direction of the goal
+		   
+		Args:
+		  des_pos(Point):  the expected x and y coordinates
+
+		Returns:
+		   None
+
+        '''
     global yaw_, pub, yaw_precision_2_, state_
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = normalize_angle(desired_yaw - yaw_)
@@ -92,6 +165,20 @@ def fix_yaw(des_pos):
 
 
 def go_straight_ahead(des_pos):
+       '''
+		Description of the go_straight_ahead function:
+
+		This function computes the robot trajectory error in the orientation and
+		in the position in order to set, using a threshold, the most suitable angular velocity and 
+		the linear velocity, which is already set.
+		   
+		Args:
+		  des_pos(Point): the expected x and y coordinates
+
+		Returns:
+		  None
+
+        '''
     global yaw_, pub, yaw_precision_, state_
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = desired_yaw - yaw_
@@ -119,6 +206,18 @@ def go_straight_ahead(des_pos):
 
 
 def done():
+        """
+		Description of done function:
+		    
+        This function set the linear and angular velocities as 0
+    
+        Args :
+          None
+    
+        Returns :
+          None
+          
+        """
     twist_msg = Twist()
     twist_msg.linear.x = 0
     twist_msg.angular.z = 0
@@ -126,7 +225,19 @@ def done():
 
     
 def planning(goal):
-
+     """
+		Description of planning function:
+		    
+        This function store as desired position (in coordinates x and y) the goal set by the client and control if the goal is preempted and
+        fill feedback of the action and call the suitable function, based on the value of the variable state_. If it succeded it set the result to true.
+    
+        Args :
+          goal (Float) = robot position goal 
+    
+        Returns :
+          None
+          
+        """
     global state_, desired_position_
     global act_s
 
@@ -173,6 +284,19 @@ def planning(goal):
 
 
 def main():
+    """
+    Description of the main function:
+           
+    It initializes the node 'go_to_point', publishes into '/cmd_vel', and subscribes to '/odom' and
+    it initializes the action server /reaching_goal 
+           
+    Args :
+      None
+    
+    Returns :
+      None
+             
+    """
     global pub, active_, act_s
     rospy.init_node('go_to_point')
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
