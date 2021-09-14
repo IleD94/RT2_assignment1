@@ -1,0 +1,24 @@
+\hypertarget{_c_make_lists_8txt}{}\doxysection{C\+Make\+Lists.\+txt File Reference}
+\label{_c_make_lists_8txt}\index{CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_c_make_lists_8txt_a098a0623eb1802b162bb415a0a6ae19e}{cmake\+\_\+minimum\+\_\+required}} (V\+E\+R\+S\+I\+ON 3.\+5) project(rt2\+\_\+assignment1) if(N\+OT C\+M\+A\+K\+E\+\_\+\+C\+\_\+\+S\+T\+A\+N\+D\+A\+RD) set(C\+M\+A\+K\+E\+\_\+\+C\+\_\+\+S\+T\+A\+N\+D\+A\+RD 99) endif() if(N\+OT C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+RD) set(C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+RD 14) endif() if(C\+M\+A\+K\+E\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+I\+S\+\_\+\+G\+N\+U\+C\+XX OR C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID M\+A\+T\+C\+H\+ES \char`\"{}Clang\char`\"{}) add\+\_\+compile\+\_\+options(-\/Wall -\/Wextra -\/Wpedantic) endif() find\+\_\+package(ament\+\_\+cmake R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(rclcpp R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(rclcpp\+\_\+components R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(rosidl\+\_\+default\+\_\+generators R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(std\+\_\+msgs R\+E\+Q\+U\+I\+R\+ED) rosidl\+\_\+generate\+\_\+interfaces(\$
+\item 
+srv Command srv srv Position srv srv Random\+Position srv \mbox{\hyperlink{_c_make_lists_8txt_acbda2e3d44e9e99c84b511344bb79d2b}{add\+\_\+library}} (State\+Machine\+\_\+component S\+H\+A\+R\+ED src/state\+\_\+machine\+\_\+ros2.\+cpp) add\+\_\+library(Position\+Server\+\_\+component S\+H\+A\+R\+ED src/position\+\_\+service\+\_\+ros2.\+cpp) rosidl\+\_\+target\+\_\+interfaces(State\+Machine\+\_\+component \$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_c_make_lists_8txt_acbda2e3d44e9e99c84b511344bb79d2b}\label{_c_make_lists_8txt_acbda2e3d44e9e99c84b511344bb79d2b}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!add\_library@{add\_library}}
+\index{add\_library@{add\_library}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{add\_library()}{add\_library()}}
+{\footnotesize\ttfamily srv Command srv srv Position srv srv Random\+Position srv add\+\_\+library (\begin{DoxyParamCaption}\item[{State\+Machine\+\_\+component S\+H\+A\+R\+ED src/state\+\_\+machine\+\_\+ros2.}]{cpp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_c_make_lists_8txt_a098a0623eb1802b162bb415a0a6ae19e}\label{_c_make_lists_8txt_a098a0623eb1802b162bb415a0a6ae19e}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!cmake\_minimum\_required@{cmake\_minimum\_required}}
+\index{cmake\_minimum\_required@{cmake\_minimum\_required}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{cmake\_minimum\_required()}{cmake\_minimum\_required()}}
+{\footnotesize\ttfamily cmake\+\_\+minimum\+\_\+required (\begin{DoxyParamCaption}\item[{V\+E\+R\+S\+I\+ON 3.}]{5 }\end{DoxyParamCaption})}
+
