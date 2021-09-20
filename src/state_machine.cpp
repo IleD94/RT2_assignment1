@@ -73,7 +73,7 @@ int main(int argc, char **argv)
    	if (stop and FirstRound) {
    		ac.cancelGoal();
 		twist_msg.linear.x = 0;
-		twist_msg.linear.y = 0;
+		//twist_msg.linear.y = 0; not necessary
 		twist_msg.angular.z = 0;
 		pub.publish(twist_msg);
 		OnMyWay = false;
